@@ -1,6 +1,6 @@
 import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {registerAction, registerFailureAction, registerSuccessAction} from "../actions/register.action";
-import {catchError, switchMap, map} from "rxjs/operators";
+import {catchError, map, switchMap} from "rxjs/operators";
 import {AuthService} from "../../services/auth.service";
 import {CurrentUserInterface} from "../../../shared/types/currentUser.interface";
 import {of} from "rxjs";
