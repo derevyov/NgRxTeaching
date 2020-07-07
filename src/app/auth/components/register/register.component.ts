@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {select, Store} from '@ngrx/store';
 import {registerAction} from "../../store/actions/register.action";
 import {Observable} from "rxjs";
 import {isSubmittingSelector} from "../../store/selectors";
+import {AuthService} from "../../services/auth.service";
+import {log} from "util";
+import {RegisterRequestInterface} from "../../types/registerRequest.interface";
 
 @Component({
   selector: 'mc-register',
@@ -12,7 +15,10 @@ import {isSubmittingSelector} from "../../store/selectors";
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private store: Store) { }
+  constructor(private fb: FormBuilder,
+              private store: Store,
+              private authService: AuthService) {
+  }
 
   ngOnInit(): void {
     this.initializeForm()
@@ -25,18 +31,18 @@ export class RegisterComponent implements OnInit {
   private initializeForm() {
     this.form = this.fb.group({
       username: ['', Validators.required],
-      email:'',
-      password:''
+      email: '',
+      password: ''
     })
   }
 
   onSubmit() {
-    console.log(this.form.valid)
-    this.store.dispatch(registerAction(this.form.value))
+    const request: RegisterRequestInterface = {user: this.form.value}
+    this.store.dispatch(registerAction({request}))
   }
 
   private initializeValues() {
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
-    console.log('isSub',this.isSubmitting$)
+    console.log('isSub', this.isSubmitting$)
   }
 }
