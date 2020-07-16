@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {OnIdentifyEffects} from "@ngrx/effects";
 import {Store} from "@ngrx/store";
 import {getCurrentUserAction} from "./auth/store/actions/getCurrentUser.action";
 

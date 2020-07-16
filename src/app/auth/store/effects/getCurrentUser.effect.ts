@@ -14,8 +14,12 @@ import {
 
 @Injectable()
 export class GetCurrentUserEffect {
-  getCurrentUser99999$ = createEffect(() => this.actions$
+  getCurrentUser$ = createEffect(() => this.actions$
     .pipe(ofType(getCurrentUserAction), switchMap(() => {
+      const token = this.persistenceService.get('accessToken')
+      if (!token) {
+        return of(getCurrentUserFailureAction())
+      }
         return this.authService.getCurrentUser().pipe(
           map((currentUser: CurrentUserInterface) => {
             return getCurrentUserSuccessAction({currentUser})
@@ -23,7 +27,7 @@ export class GetCurrentUserEffect {
           catchError((errorResponse: HttpErrorResponse) => {
             return of(getCurrentUserFailureAction())
           })
-        )
+        );
       })
     ))
 
