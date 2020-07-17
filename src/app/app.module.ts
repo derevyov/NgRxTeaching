@@ -12,6 +12,8 @@ import {EffectsModule} from "@ngrx/effects";
 import {TopBarModule} from "./shared/modules/topBar/topBar.module";
 import {PersistenceService} from "./shared/services/persistence.service";
 import {AuthInterceptor} from "./shared/services/authinterceptor.service";
+import {GlobalFeedModule} from "./globalFeed/global-feed.module";
+import {FeedModule} from "./shared/modules/feed/feed.module";
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {AuthInterceptor} from "./shared/services/authinterceptor.service";
       logOnly: environment.production,
     }),
     TopBarModule,
+    GlobalFeedModule,
+   // FeedModule
   ],
   providers: [
     PersistenceService,
