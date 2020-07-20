@@ -9,6 +9,8 @@ export class GlobalFeedComponent implements OnInit {
 
   constructor() { }
 
+  apiUrl = '/articles';
+
   ngOnInit(): void {
   }
 
