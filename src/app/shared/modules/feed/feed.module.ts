@@ -8,8 +8,10 @@ import {reducers} from "./store/reducers";
 import {FeedService} from "./services/feed.service";
 import {RouterModule} from "@angular/router";
 import {ErrorMessageModule} from "../errorMessage/error-message.module";
-import {LoadingModule} from "../loading/loading.module";
+
 import {PaginationModule} from "../pagination/pagination.module";
+import {LoadingModule} from "../loading/loading.module";
+import {TagListModule} from "../tag-list/tagList.module";
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import {PaginationModule} from "../pagination/pagination.module";
     RouterModule,
     ErrorMessageModule,
     LoadingModule,
-    PaginationModule
+    PaginationModule,
+    TagListModule
   ],
   providers: [FeedService]
 })
