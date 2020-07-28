@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
         Authorization: token ? `Token ${token}` : ''
       }
     })
-    console.log(req)
+    //console.log(req)
     return next.handle(req);
   }
 }
