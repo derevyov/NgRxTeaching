@@ -7,9 +7,9 @@ import {
   getPopularTagsSuccessAction
 } from "../actions/PopularTags.action";
 import {catchError, map, switchMap} from "rxjs/operators";
-import {GetPopularTagsResponseInterface} from "../../types/getPopularTagsResponse.interface";
 import {HttpErrorResponse} from "@angular/common/http";
 import {of} from "rxjs";
+import {PopularTagType} from "../../../../types/PopularTag.type";
 
 @Injectable()
 export class GetPopularTagsEffect {
@@ -17,7 +17,7 @@ export class GetPopularTagsEffect {
     ofType(getPopularTagsAction),
     switchMap(({url}) => {
       return this.popularTagsService.getPopularTags(url).pipe(
-        map((popularTags: GetPopularTagsResponseInterface) => {
+        map((popularTags: PopularTagType[]) => {
           return getPopularTagsSuccessAction({popularTags});
         }), catchError((errorResponse: HttpErrorResponse) => {
           return of(getPopularTagsFailureAction);

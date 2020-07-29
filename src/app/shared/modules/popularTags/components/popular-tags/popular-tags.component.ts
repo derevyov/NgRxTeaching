@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {select, Store} from "@ngrx/store";
 import {Observable} from "rxjs";
-import {GetPopularTagsResponseInterface} from "../../types/getPopularTagsResponse.interface";
 import {errorSelector, isLoadingSelector, popularTagsSelector} from "../../store/selectors";
 import {getPopularTagsAction} from "../../store/actions/PopularTags.action";
+import {PopularTagType} from "../../../../types/PopularTag.type";
 
 @Component({
   selector: 'mc-popular-tags',
@@ -17,7 +17,7 @@ export class PopularTagsComponent implements OnInit {
 
   isLoading$: Observable<boolean>;
   error$: Observable<string | null>;
-  popularTags$: Observable<GetPopularTagsResponseInterface | null>;
+  popularTags$: Observable<PopularTagType[] | null>;
   private url = '/tags';
 
   ngOnInit(): void {

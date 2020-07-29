@@ -8,6 +8,7 @@ import {StoreModule} from "@ngrx/store";
 import {reducers} from "./store/reducers";
 import {ErrorMessageModule} from "../errorMessage/error-message.module";
 import {LoadingModule} from "../loading/loading.module";
+import {RouterModule} from "@angular/router";
 
 @NgModule({
   declarations: [PopularTagsComponent],
@@ -18,6 +19,7 @@ import {LoadingModule} from "../loading/loading.module";
     StoreModule.forFeature('popularTags', reducers),
     ErrorMessageModule,
     LoadingModule,
+    RouterModule,
   ],
   providers: [PopularTagsService]
 })

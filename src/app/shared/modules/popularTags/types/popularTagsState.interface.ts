@@ -1,7 +1,7 @@
-import {GetPopularTagsResponseInterface} from "./getPopularTagsResponse.interface";
+import {PopularTagType} from "../../../types/PopularTag.type";
 
 export interface PopularTagsStateInterface {
   isLoading: boolean
   error: string | null
-  data: GetPopularTagsResponseInterface | null
+  data: PopularTagType[] | null
 }

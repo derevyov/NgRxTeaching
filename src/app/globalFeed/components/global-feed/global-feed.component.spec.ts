@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GlobalFeedComponent } from './global-feed.component';
+import {GlobalFeedComponent} from './global-feed.component';
 
 describe('GlobalFeedComponent', () => {
   let component: GlobalFeedComponent;
