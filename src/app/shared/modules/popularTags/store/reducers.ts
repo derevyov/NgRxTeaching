@@ -32,6 +32,7 @@ const popularTagsReducer = createReducer(
       ...state,
       isLoading: false
     })),
+  // on(routerNavigationAction, (): PopularTagsStateInterface => initialState)
 );
 
 export function reducers(state: PopularTagsStateInterface, action: Action) {

@@ -13,11 +13,14 @@ import {TopBarModule} from "./shared/modules/topBar/topBar.module";
 import {PersistenceService} from "./shared/services/persistence.service";
 import {AuthInterceptor} from "./shared/services/authinterceptor.service";
 import {GlobalFeedModule} from "./globalFeed/global-feed.module";
-import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store'
+import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
+import {YourFeedModule} from "./yourFeed/your-feed/your-feed.module";
+import {TagFeedModule} from "./tagFeed/tag-feed.module";
 
 @NgModule({
   declarations: [
     AppComponent,
+
 
   ],
   imports: [
@@ -37,7 +40,8 @@ import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store'
     StoreRouterConnectingModule.forRoot(),
     TopBarModule,
     GlobalFeedModule,
-    // FeedModule
+    YourFeedModule,
+    TagFeedModule,
   ],
   providers: [
     PersistenceService,
