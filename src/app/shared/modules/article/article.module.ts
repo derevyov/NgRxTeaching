@@ -9,18 +9,23 @@ import {ArticleService as SharedArticleService} from "../../services/article.ser
 import {RouterModule} from "@angular/router";
 import {ErrorMessageModule} from "../errorMessage/error-message.module";
 import {LoadingModule} from "../loading/loading.module";
+import {TagListModule} from "../tag-list/tagList.module";
 
+const routes = [{
+  path: 'articles/:slug', component: ArticleComponent
+}];
 
 @NgModule({
   declarations: [ArticleComponent],
-  exports: [ArticleComponent],
+  exports: [],
   imports: [
     CommonModule,
     EffectsModule.forFeature([GetArticleEffect]),
     StoreModule.forFeature('article', reducers),
-    RouterModule,
+    RouterModule.forChild(routes),
     ErrorMessageModule,
     LoadingModule,
+    TagListModule,
 
 
   ],

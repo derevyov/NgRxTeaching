@@ -1,6 +1,5 @@
 import {createAction, props} from "@ngrx/store";
 import {ActionTypes} from "../actionTypes";
-import {GetArticleResponseInterface} from "../../../../types/getArticleResponse.interface";
 import {ArticleInterface} from "../../../../types/article.interface";
 
 export const getArticleAction = createAction(ActionTypes.GET_ARTICLE, props<{ slug: string }>())
