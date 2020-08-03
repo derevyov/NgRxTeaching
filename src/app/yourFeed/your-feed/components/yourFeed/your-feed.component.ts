@@ -9,7 +9,7 @@ export class YourFeedComponent implements OnInit {
 
   constructor() { }
 
-  apiUrl = '/articles/feed';
+  apiUrl = '/articles/article';
 
   ngOnInit(): void {
   }
