@@ -8,6 +8,7 @@ import {articleSelector, errorSelector, isLoadingSelector} from "../../store/sel
 import {currentUserSelector} from "../../../../../auth/store/selectors";
 import {map} from "rxjs/operators";
 import {CurrentUserInterface} from "../../../../types/currentUser.interface";
+import {deleteArticleAction} from "../../store/actions/deleteArticle.action";
 
 
 @Component({
@@ -51,7 +52,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
             CurrentUserInterface | null]) => {
             if (!article || !currentUser) {
               return false;
-            } return currentUser.username === article.author.username;
+            }
+            return currentUser.username === article.author.username;
           }
         )
       );
@@ -73,5 +75,9 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.s1.unsubscribe();
+  }
+
+  deleteArticle() {
+    this.store.dispatch(deleteArticleAction({slug: this.slug}));
   }
 }

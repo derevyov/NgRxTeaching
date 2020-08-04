@@ -8,7 +8,6 @@ import {environment} from "../../../../../../environments/environment";
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {parseUrl, stringify} from "query-string";
 
-
 @Component({
   selector: 'mc-feed',
   templateUrl: './feed.component.html',

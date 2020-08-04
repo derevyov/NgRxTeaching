@@ -12,9 +12,9 @@
           <a [routerLink]="['/articles', article.slug,'edit']" class="btn btn-outline-secondary btn-small">
             <i class="ion-edit"></i> Edit article
           </a>
-          <a [routerLink]="['/articles', article.slug,'delete']" class="btn btn-outline-danger btn-small">
-            <i class="ion-delete"></i>  DELETE BUTTON
-          </a>
+          <button class="btn btn-outline-danger btn-small" (click)="deleteArticle()">
+            <i class="ion-trash-a"></i>  Delete article
+          </button>
 
         </span>
       </div>
