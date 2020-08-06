@@ -16,6 +16,7 @@ import {GlobalFeedModule} from "./globalFeed/global-feed.module";
 import {routerReducer, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {YourFeedModule} from "./yourFeed/your-feed/your-feed.module";
 import {TagFeedModule} from "./tagFeed/tag-feed.module";
+import {CreateArticleModule} from "./createArticle/createArticle.module";
 import {ArticleModule} from "./shared/modules/article/article.module";
 
 @NgModule({
@@ -43,6 +44,7 @@ import {ArticleModule} from "./shared/modules/article/article.module";
     GlobalFeedModule,
     YourFeedModule,
     TagFeedModule,
+    CreateArticleModule,
     ArticleModule
   ],
   providers: [
