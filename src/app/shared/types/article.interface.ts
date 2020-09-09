@@ -5,7 +5,7 @@ export interface ArticleInterface {
   body: string;
   createdAt: string;
   description: string;
-  favorites: boolean;
+  favorited: boolean;
   favoritesCount: number;
   slug: string;
   tagList: string[];
